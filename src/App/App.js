@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import CardWrapper from '../CardWrapper/CardWrapper'
+
+
 class App extends Component {
   render() {
     return (
-      <div>Welcome To Headcount 2.0</div>
+      <div>
+        <h1>Welcome To Headcount 2.0</h1>
+        <CardWrapper />
+      </div>
     );
   }
 }
