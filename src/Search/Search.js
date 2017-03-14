@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 
+import './Search.css';
+
+
 const Search = ({ repo, callback }) => {
   return (
     <div className='search'>
@@ -13,4 +16,3 @@ const Search = ({ repo, callback }) => {
 
 
 export default Search;
-

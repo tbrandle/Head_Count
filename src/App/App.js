@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './normalize.css';
 
 import CardWrapper from '../CardWrapper/CardWrapper'
 import Search from '../Search/Search'
@@ -19,7 +20,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='header'>
         <h1>Welcome To Headcount 2.0</h1>
         <Search repo={this.districtRepo} callback={this.handleSearchInput}/>
         <CardWrapper repo={this.districtRepo} displayTheseGuys={this.state.currentSearch}/>
@@ -33,5 +34,3 @@ class App extends Component {
 }
 
 export default App;
-
-

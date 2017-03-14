@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 
+import './CardWrapper.css';
+
+
 const CardWrapper = ({ repo, displayTheseGuys } ) => {
   return (
     <div className='card-wrapper'>
