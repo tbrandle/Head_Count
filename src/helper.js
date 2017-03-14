@@ -1,8 +1,6 @@
 export default class DistrictRepository {
 
   constructor (data) {
-    // maybe break the data reduce into it's own function??
-    this.rawData = data
     this.data = data.reduce((acc, obj) => {
       if (!acc[obj.Location]) {
         acc[obj.Location] = []
@@ -30,10 +28,8 @@ export default class DistrictRepository {
   }
 
   findAllMatches (nameToFind) {
-    if (nameToFind) {
-      const key = Object.keys(this.data).filter(key => key.toLowerCase().includes(nameToFind.toLowerCase()))
-      return key
-    }
-    return Object.keys(this.data)
+    return nameToFind
+         ? Object.keys(this.data).filter(key => key.toLowerCase().includes(nameToFind.toLowerCase()))
+         : Object.keys(this.data);
   }
 }

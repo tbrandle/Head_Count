@@ -9,8 +9,9 @@ const CardWrapper = ({ data }) => {
   const district = new DistrictRepository(kinderData);
 
   return (
-    <div>
-      <DistrictCard districtData={district.findByName('ADAMS COUNTY 14')} />
+    <div className='card-wrapper'>
+      // function to take an input of names
+      <DistrictCard className='' districtData={district.findByName('ADAMS COUNTY 14')} />
     </div>
   )
 }
