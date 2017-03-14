@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 
-import DistrictRepository from '../helper.js';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
+// import DistrictRepository from '../helper.js';
+// import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 
-const CardWrapper = ({ data }) => {
-  const district = new DistrictRepository(kinderData);
+const CardWrapper = ({ repo }) => {
+  // const district = new DistrictRepository(kinderData);
+  const allDistricts = repo.findAllMatches()
+  // serchresults = district.findAllMatches('string from search componenet')
 
   return (
     <div className='card-wrapper'>
-      // function to take an input of names
-      <DistrictCard className='' districtData={district.findByName('ADAMS COUNTY 14')} />
+      {
+        allDistricts.map((location, i) => {
+          return <DistrictCard key={i} className='card' districtData={repo.findByName(location)} />
+        })
+      }
     </div>
   )
 }
