@@ -1,5 +1,7 @@
 export default class DistrictRepository {
+
   constructor (data) {
+    // maybe break the data reduce into it's own function??
     this.data = data.reduce((acc, obj) => {
       if (!acc[obj.Location]) {
         acc[obj.Location] = []
@@ -31,5 +33,3 @@ export default class DistrictRepository {
     //{location: ??, data: { "2004": 0.302, "2005": 0.267...}}
   }
 }
-
-
