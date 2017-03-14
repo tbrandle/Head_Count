@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 const DistrictCard = (props) => {
-  console.log(props)
   return (
     <div>
       <h1 className='title' >{props.districtData.location}</h1>

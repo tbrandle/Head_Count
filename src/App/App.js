@@ -12,21 +12,26 @@ class App extends Component {
   constructor () {
     super()
     this.districtRepo = new DistrictRepository(kinderData)
-    this.state = {}
+    this.state = {
+      currentSearch: this.districtRepo.findAllMatches()
+    }
+    this.handleSearchInput = this.handleSearchInput.bind(this)
   }
   render() {
     return (
       <div>
         <h1>Welcome To Headcount 2.0</h1>
-        <Search />
-        <CardWrapper repo={this.districtRepo}/>
+        <Search repo={this.districtRepo} callback={this.handleSearchInput}/>
+        <CardWrapper repo={this.districtRepo} displayTheseGuys={this.state.currentSearch}/>
       </div>
-    );
+    )
   }
 
-  handleSearchInput (search) {
-
+  handleSearchInput (input) {
+    this.setState({ currentSearch: input })
   }
 }
 
 export default App;
+
+
