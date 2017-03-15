@@ -6,8 +6,6 @@ class Comparison extends Component {
     super()
   }
 
-  // return <div> hey </div>
-  // console.log(this.props.card1, ' heyo')
   render () {
     if (this.props.card1 && !this.props.card2) {
       return (
@@ -16,9 +14,9 @@ class Comparison extends Component {
     } else if (this.props.card1 && this.props.card2) {
       return (
         <div>
-          <DistrictCard />
+          <DistrictCard districtData={this.props.card1}/>
           <div> Comparision here </div>
-          <DistrictCard />
+            <DistrictCard districtData={this.props.card2}/>
         </div>
       )
     }
@@ -28,11 +26,3 @@ class Comparison extends Component {
 }
 
 export default Comparison;
-
-
-
-
-
-
-
-

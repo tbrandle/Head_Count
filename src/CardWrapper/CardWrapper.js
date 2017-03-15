@@ -26,19 +26,19 @@ class CardWrapper extends Component {
       {
         this.props.displayTheseGuys.map((location, i) => {
           return <DistrictCard
-                  key={i}
-                  className='card'
-                  selectMe={this.handleCardSelect}
-                  districtData={this.props.repo.findByName(location)} />
+                    key={i}
+                    className='card'
+                    selectMe={this.handleCardSelect}
+                    districtData={this.props.repo.findByName(location)} />
         })
       }
       </div>
   )}
 
   handleCardSelect (card) {
-    console.log('handling a card selection now')
-    console.log(card.props.districtData)
-    this.setState({card1: card.props.districtData})
+    !this.state.card1
+      ? this.setState({card1: card.props.districtData})
+      : this.setState({card2: card.props.districtData})
   }
 }
 
