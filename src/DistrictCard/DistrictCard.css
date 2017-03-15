@@ -6,3 +6,8 @@
   margin: 10px 0;
   text-align: center;
 }
+
+.district-card-selected {
+  background-color: lightgreen;
+  border: 10px;
+}
