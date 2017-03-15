@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
+import DistrictCard from '../DistrictCard/DistrictCard';
 
 class Comparison extends Component {
   constructor () {
     super()
   }
 
+  // return <div> hey </div>
+  // console.log(this.props.card1, ' heyo')
   render () {
-    // return <div> hey </div>
     if (this.props.card1 && !this.props.card2) {
       return (
-        this.props.card1
+        <DistrictCard districtData={this.props.card1}/>
       )
     } else if (this.props.card1 && this.props.card2) {
       return (
         <div>
-          {this.props.card1}
+          <DistrictCard />
           <div> Comparision here </div>
-          {this.props.card2}
+          <DistrictCard />
         </div>
       )
     }
-
-    return <div></div>
+    return <div> </div>
 
   }
 }
 
 export default Comparison;
+
+
+
+
+
+
+
 
