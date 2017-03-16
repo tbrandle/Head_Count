@@ -1,39 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 
 import './Comparison.css';
 
-class Comparison extends Component {
-  constructor () {
-    super()
-  }
+const Comparison = ({ card1, card2, repo, clearSelection }) => {
 
-  render () {
-    if (this.props.card1 && !this.props.card2) {
+    if (card1 && !card2) {
       return (
         <div className='comparison'>
-          <DistrictCard districtData={this.props.card1}/>
+          <DistrictCard districtData={card1}/>
         </div>
       )
-    } else if (this.props.card1 && this.props.card2) {
-      const compareObject = this.props.repo.compareDistrictAverages(this.props.card1.location, this.props.card2.location)
+    } else if (card1 && card2) {
+      const compareObject = repo.compareDistrictAverages(card1.location, card2.location)
       return (
         <div className='comparison'>
-          <DistrictCard districtData={this.props.card1}/>
+          <DistrictCard districtData={card1}/>
           <div className='compare-card'>
-            <h3 className="location">{ this.props.card1.location} </h3>
-            <p className="location-average">{ compareObject[this.props.card1.location]} %</p>
-            <p className="average-compare">-- { compareObject.compared} % --</p>
-            <h3 className="location">{ this.props.card2.location }</h3>
-            <p className="location-average">{ compareObject[this.props.card2.location]} %</p>
-            <button className='clear-btn' onClick={ ()=>this.props.clearSelection() } type='submit' value='clear'>clear</button>
+            <h3 className="location">{ card1.location} </h3>
+            <p className="location-average">{ compareObject[card1.location]} %</p>
+            <p className="average-compare"> -- { compareObject.compared} % -- </p>
+            <h3 className="location">{ card2.location }</h3>
+            <p className="location-average">{ compareObject[card2.location]} %</p>
+            <button className='clear-btn'
+                    onClick={() => clearSelection()}
+                    type='submit'
+                    value='clear'>clear</button>
           </div>
-          <DistrictCard districtData={this.props.card2}/>
+          <DistrictCard districtData={card2}/>
         </div>
       )
     }
     return <div></div>
-  }
 }
 
 export default Comparison;

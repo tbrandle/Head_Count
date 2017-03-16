@@ -47,5 +47,3 @@ class CardWrapper extends Component {
 }
 
 export default CardWrapper;
-
-// <Comparison card1={this.state.card1} card2={this.state.card2} repo={repo}/>
