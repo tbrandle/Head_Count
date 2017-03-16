@@ -17,8 +17,10 @@ describe('Search tests', () =>  {
   test('trigger callback onChange', () => {
     let flag = false
     const testFun = () => flag = true
-    const wrapper = shallow(<Search callback={testFun}/>)
+    const wrapper = shallow(<Search repo={repo} callback={testFun}/>)
     expect(wrapper.find('input').length).toBe(1)
+    wrapper.props().children.props.onChange({target:{value:'fakeValue'}})
+    expect(flag).toBe(true)
   });
-
+  
 });
