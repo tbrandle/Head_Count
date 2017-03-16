@@ -5,6 +5,9 @@
   border-bottom: 2px orange solid;
   width: 224px;
   margin: auto;
+  color: white;
+  padding: 4px;
+  text-align: center;
 }
 
 .submit {
