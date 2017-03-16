@@ -21,8 +21,8 @@ describe('DistrictCard tests', () =>  {
 
   test('card displays data below .5 as red, and above .5 as green', () => {
     const wrapper = shallow(<DistrictCard districtData={exampleData} />)
-    expect(wrapper.find('p.percentage-low').length).toBe(7);
-    expect(wrapper.find('p.percentage-high').length).toBe(3);
+    expect(wrapper.find('p.percentage-low').length).toBe(4);
+    expect(wrapper.find('p.percentage-high').length).toBe(7);
   })
 
 });
