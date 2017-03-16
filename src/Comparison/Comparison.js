@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 
 import './Comparison.css';
-import '../DistrictCard/DistrictCard.css';
-
 
 class Comparison extends Component {
   constructor () {
@@ -24,13 +22,12 @@ class Comparison extends Component {
       return (
         <div className='comparison'>
           <DistrictCard districtData={this.props.card1}/>
-          <div className='district-card'>
-            { compareObject.compared }
-            { this.props.card1.location }
-            { compareObject[this.props.card1.location] }
-            { this.props.card2.location }
-            { compareObject[this.props.card2.location]}
-
+          <div className='compare-card'>
+            <h3 className="location">{ this.props.card1.location }</h3>
+            <p className="location-average">{ compareObject[this.props.card1.location] }</p>
+            <p className="average-compare">-- { compareObject.compared } --</p>
+            <h3 className="location">{ this.props.card2.location }</h3>
+            <p className="location-average">{ compareObject[this.props.card2.location] }</p>
           </div>
           <DistrictCard districtData={this.props.card2}/>
           <button type='submit' value='clear'>clear</button>
