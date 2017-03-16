@@ -1,5 +1,4 @@
 
-
 .district-card {
   border: 2px grey solid;
   width: 300px;
@@ -18,7 +17,7 @@
   color: green;
 }
 
-.selected,
 .district-card:hover {
   background-color: rgb(227,167,47);
+  cursor: pointer;
 }

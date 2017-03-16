@@ -21,3 +21,7 @@
 .clear-btn {
   width: 100px;
 }
+
+.clear-btn {
+  cursor: pointer;
+}
