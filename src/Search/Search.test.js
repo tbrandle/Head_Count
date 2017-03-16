@@ -15,12 +15,11 @@ describe('Search tests', () =>  {
   });
 
   test('trigger callback onChange', () => {
-    let flag = false
-    const testFun = () => flag = true
-    const wrapper = shallow(<Search repo={repo} callback={testFun}/>)
+    const fakeFn = jest.fn()
+    const wrapper = shallow(<Search repo={repo} callback={fakeFn}/>)
     expect(wrapper.find('input').length).toBe(1)
     wrapper.props().children.props.onChange({target:{value:'fakeValue'}})
-    expect(flag).toBe(true)
+    expect(fakeFn.mock.calls.length).toBe(1)
   });
-  
+
 });
