@@ -51,10 +51,10 @@ export default class DistrictRepository {
     } else {
        compared =  averageTwo / averageOne
     }
-    compared = compared.toFixed(3)*1
+    compared = (compared * 100).toFixed(2)*1
     const obj = { compared }
-    obj[district1] = averageOne
-    obj[district2] = averageTwo
+    obj[district1] = (averageOne * 100).toFixed(2)*1
+    obj[district2] = (averageTwo * 100).toFixed(2)*1
     return obj;
   }
 }

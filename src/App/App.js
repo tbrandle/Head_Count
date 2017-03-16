@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className='header'>
-        <h1>Welcome To Headcount 2.0</h1>
+        <h1 className='title-main'>Welcome To Headcount 2.0</h1>
         <Search repo={this.districtRepo} callback={this.handleSearchInput}/>
         <CardWrapper repo={this.districtRepo} displayTheseGuys={this.state.currentSearch}/>
       </div>

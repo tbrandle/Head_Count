@@ -1,16 +1,22 @@
+.comparison {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .compare-card {
   border: 2px grey solid;
   width: 300px;
   margin: 10px 0;
   text-align: center;
-}
-
-.comparison {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+  background-color: #d54b1a;
+  border-radius: 34px;
 }
 
 .average-compare {
   font-size: 2em;
+}
+
+.clear-btn {
+  width: 100px;
 }

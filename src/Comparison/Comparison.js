@@ -14,7 +14,6 @@ class Comparison extends Component {
         <div className='comparison'>
           <DistrictCard districtData={this.props.card1}/>
         </div>
-
       )
     } else if (this.props.card1 && this.props.card2) {
       const compareObject = this.props.repo.compareDistrictAverages(this.props.card1.location, this.props.card2.location)
@@ -22,19 +21,18 @@ class Comparison extends Component {
         <div className='comparison'>
           <DistrictCard districtData={this.props.card1}/>
           <div className='compare-card'>
-            <h3 className="location">{ this.props.card1.location }</h3>
-            <p className="location-average">{ compareObject[this.props.card1.location] }</p>
-            <p className="average-compare">-- { compareObject.compared } --</p>
+            <h3 className="location">{ this.props.card1.location} </h3>
+            <p className="location-average">{ compareObject[this.props.card1.location]} %</p>
+            <p className="average-compare">-- { compareObject.compared} % --</p>
             <h3 className="location">{ this.props.card2.location }</h3>
-            <p className="location-average">{ compareObject[this.props.card2.location] }</p>
+            <p className="location-average">{ compareObject[this.props.card2.location]} %</p>
+            <button className='clear-btn' onClick={ ()=>this.props.clearSelection() } type='submit' value='clear'>clear</button>
           </div>
           <DistrictCard districtData={this.props.card2}/>
-          <button onClick={ ()=>this.props.clearSelection() } type='submit' value='clear'>clear</button>
         </div>
       )
     }
-    return <div> </div>
-
+    return <div></div>
   }
 }
 
