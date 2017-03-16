@@ -1,5 +1,16 @@
+.compare-card {
+  border: 2px grey solid;
+  width: 300px;
+  margin: 10px 0;
+  text-align: center;
+}
+
 .comparison {
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.average-compare {
+  font-size: 2em;
 }

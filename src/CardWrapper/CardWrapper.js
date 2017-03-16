@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import DistrictCard from '../DistrictCard/DistrictCard';
 import Comparison from '../Comparison/Comparison';
 
-
-
-
-
 import './CardWrapper.css';
 
 
