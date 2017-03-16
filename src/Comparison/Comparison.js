@@ -9,7 +9,6 @@ class Comparison extends Component {
   }
 
   render () {
-
     if (this.props.card1 && !this.props.card2) {
       return (
         <div className='comparison'>
