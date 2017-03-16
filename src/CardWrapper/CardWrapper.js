@@ -18,18 +18,16 @@ class CardWrapper extends Component {
   render () {
     return (
       <div className='card-wrapper'>
-      <Comparison
-        card1={this.state.card1}
-        card2={this.state.card2}
-        repo={this.props.repo}
-        clearSelection={ ()=>this.clearSelection() } />
+      <Comparison card1={this.state.card1}
+                  card2={this.state.card2}
+                  repo={this.props.repo}
+                  clearSelection={ ()=>this.clearSelection() } />
       {
         this.props.displayTheseGuys.map((location, i) => {
-          return <DistrictCard
-                    key={i}
-                    className='card'
-                    selectMe={this.handleCardSelect}
-                    districtData={this.props.repo.findByName(location)} />
+          return <DistrictCard key={i}
+                               className='card'
+                               selectMe={this.handleCardSelect}
+                               districtData={this.props.repo.findByName(location)} />
         })
       }
       </div>
