@@ -12,6 +12,7 @@
   text-align: center;
   background-color: #d54b1a;
   border-radius: 34px;
+  min-height: 300px;
 }
 
 .average-compare {
@@ -20,8 +21,13 @@
 
 .clear-btn {
   width: 100px;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
 }
 
-.clear-btn {
+.clear-btn:hover {
   cursor: pointer;
+  color: #d54b1a;
+  background-color: white;
 }
