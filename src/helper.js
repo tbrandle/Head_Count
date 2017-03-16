@@ -2,12 +2,12 @@ export default class DistrictRepository {
 
   constructor (data) {
     this.data = data.reduce((acc, obj) => {
-      if (!acc[obj.Location]) {
-        acc[obj.Location] = []
-      }
-      acc[obj.Location].push(obj)
-      return acc
-    }, {})
+                  if (!acc[obj.Location]) {
+                    acc[obj.Location] = [];
+                  }
+                  acc[obj.Location].push(obj)
+                  return acc;
+                }, {})
   }
 
   findByName (nameToFind) {
@@ -15,11 +15,9 @@ export default class DistrictRepository {
       const key = Object.keys(this.data).find(key => nameToFind.toLowerCase() === key.toLowerCase())
       if(key) {
         const dateScoreData = this.data[key].reduce((result, current) => {
-          if(typeof current.Data === "number"){
-            result[current.TimeFrame] = current.Data.toFixed(3) * 1
-          } else {
-            result[current.TimeFrame] = 0
-          }
+          typeof current.Data === "number"
+            ? result[current.TimeFrame] = current.Data.toFixed(3) * 1
+            : result[current.TimeFrame] = 0;
           return result
         }, {})
         return { location:key, data:dateScoreData }
@@ -43,18 +41,13 @@ export default class DistrictRepository {
   }
 
   compareDistrictAverages(district1, district2){
-    const averageOne = this.findAverage(district1)
-    const averageTwo = this.findAverage(district2)
-    let compared
-    if (averageOne < averageTwo) {
-       compared = averageOne / averageTwo
-    } else {
-       compared =  averageTwo / averageOne
-    }
-    compared = (compared * 100).toFixed(2)*1
+    const averageOne = (this.findAverage(district1)* 100).toFixed(2)*1
+    const averageTwo = (this.findAverage(district2)* 100).toFixed(2)*1
+    let districtAverage = [averageOne, averageTwo].sort()
+    let compared = districtAverage.reduce((acc, average) => (acc / average) *100).toFixed(2)*1
     const obj = { compared }
-    obj[district1] = (averageOne * 100).toFixed(2)*1
-    obj[district2] = (averageTwo * 100).toFixed(2)*1
+    obj[district1] = averageOne
+    obj[district2] = averageTwo
     return obj;
   }
 }
