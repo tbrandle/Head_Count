@@ -1,17 +1,24 @@
+import Search from '../Search/Search';
+import { shallow, mount } from 'enzyme'
+import React from 'react';
+
 import DistrictRepository from '../../src/helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-describe.skip('DistrictRepository iteration 0', () =>  {
-  const district = new DistrictRepository(kinderData);
 
-  test('district has data in an object', () => {
-    // remember that an array is also just an object.
-    expect(typeof district.data).toBe('object');
+describe('Search tests', () =>  {
+  const repo = new DistrictRepository(kinderData);
+
+  test('renders an input field', () => {
+    const wrapper = shallow(<Search />)
+    expect(wrapper.find('input').length).toBe(1)
   });
 
-  test('data coming in has no duplicates', () => {
-    // uncomment out the tests that best fits your model
-    expect(Object.keys(district.data).length).toBe(181);
+  test('trigger callback onChange', () => {
+    let flag = false
+    const testFun = () => flag = true
+    const wrapper = shallow(<Search callback={testFun}/>)
+    expect(wrapper.find('input').length).toBe(1)
   });
 
 });
