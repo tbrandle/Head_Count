@@ -25,7 +25,6 @@ class CardWrapper extends Component {
       {
         this.props.displayTheseGuys.map((location, i) => {
           return <DistrictCard key={i}
-                               className='card'
                                selectMe={this.handleCardSelect}
                                districtData={this.props.repo.findByName(location)} />
         })

@@ -5,14 +5,9 @@
   width: 300px;
   margin: 10px 0;
   text-align: center;
-  background-color: rgba(227,167,47, 0.6);
+  background-color: rgba(227,167,47, 0.4);
   color: white;
   border-radius: 34px;
-}
-
-.district-card-selected {
-  background-color: lightgreen;
-  border: 10px;
 }
 
 .percentage-low {
@@ -21,4 +16,9 @@
 
 .percentage-high {
   color: green;
+}
+
+.selected,
+.district-card:hover {
+  background-color: rgb(227,167,47);
 }
