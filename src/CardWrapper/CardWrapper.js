@@ -37,8 +37,8 @@ class CardWrapper extends Component {
 
   handleCardSelect (card) {
     !this.state.card1
-      ? this.setState({card1: card.props.districtData})
-      : this.setState({card2: card.props.districtData})
+      ? this.setState({card1: card})
+      : this.setState({card2: card})
   }
 
   clearSelection(){

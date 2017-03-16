@@ -13,7 +13,7 @@ const checkPercentage = (districtData, key) => {
 const DistrictCard = ({ districtData, selectMe }) => {
 
     return (
-      <div className='district-card' onClick={(e) => selectMe()}>
+      <div className='district-card' onClick={(e) => selectMe( districtData )}>
         <h3 className='title' >{districtData.location}</h3>
         <section className='data-section' >
         { Object.keys(districtData.data).map((key, i) =>
