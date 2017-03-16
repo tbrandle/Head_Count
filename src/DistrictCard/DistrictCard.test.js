@@ -1,17 +1,28 @@
+import DistrictCard from '../DistrictCard/DistrictCard'
+import { shallow, mount } from 'enzyme'
+import React from 'react';
+
 import DistrictRepository from '../../src/helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-describe.skip('DistrictRepository iteration 0', () =>  {
+describe('DistrictCard tests', () =>  {
   const district = new DistrictRepository(kinderData);
+  const exampleData = district.findByName('Colorado')
 
-  test('district has data in an object', () => {
-    // remember that an array is also just an object.
-    expect(typeof district.data).toBe('object');
+  test('districtCard has class of district-card', () => {
+    const wrapper = shallow(<DistrictCard districtData={exampleData} />)
+    expect(wrapper.hasClass('district-card')).toBe(true);
   });
 
-  test('data coming in has no duplicates', () => {
-    // uncomment out the tests that best fits your model
-    expect(Object.keys(district.data).length).toBe(181);
-  });
+  test('card displays all data provided', () => {
+    const wrapper = shallow(<DistrictCard districtData={exampleData} />)
+    expect(wrapper.find('p').length).toBe(11);
+  })
+
+  test('card displays data below .5 as red, and above .5 as green', () => {
+    const wrapper = shallow(<DistrictCard districtData={exampleData} />)
+    expect(wrapper.find('p.percentage-low').length).toBe(7);
+    expect(wrapper.find('p.percentage-high').length).toBe(3);
+  })
 
 });
