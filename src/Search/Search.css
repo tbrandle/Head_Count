@@ -1,11 +1,12 @@
 
-
-input {
+.search {
   background-color: transparent;
   border: none;
-}
-.search {
   border-bottom: 2px orange solid;
   width: 224px;
   margin: auto;
+}
+
+.submit {
+  
 }
