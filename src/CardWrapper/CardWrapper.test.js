@@ -1,17 +1,23 @@
+import CardWrapper from '../CardWrapper/CardWrapper'
+import { shallow, mount } from 'enzyme'
+import React from 'react';
+
 import DistrictRepository from '../../src/helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-describe.skip('DistrictRepository iteration 0', () =>  {
-  const district = new DistrictRepository(kinderData);
+describe('Card Wrapper tests', () =>  {
+  const repo = new DistrictRepository(kinderData);
 
-  test('district has data in an object', () => {
-    // remember that an array is also just an object.
-    expect(typeof district.data).toBe('object');
+  test('renders list of districts', () => {
+    const wrapper = mount(<CardWrapper repo={repo} displayTheseGuys={['Colorado', 'ADAMS-ARAPAHOE 28J']}/>)
+    expect(wrapper.find('.district-card').length).toBe(2)
   });
 
-  test('data coming in has no duplicates', () => {
-    // uncomment out the tests that best fits your model
-    expect(Object.keys(district.data).length).toBe(181);
+  test('stores selected cards into state', () => {
+    const wrapper = mount(<CardWrapper repo={repo} displayTheseGuys={['Colorado', 'ADAMS-ARAPAHOE 28J']}/>)
+    expect(wrapper.find('.district-card').length).toBe(2)
+    wrapper.node.handleCardSelect({props: {districtData: {location:'hey', data: {2001:.03}}}})
+    expect(wrapper.state().card1).toEqual({location:'hey', data: {2001:.03}})
   });
 
 });
