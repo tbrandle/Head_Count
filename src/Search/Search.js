@@ -6,9 +6,8 @@ import './Search.css';
 const Search = ({ repo, callback }) => {
   return (
     <div className='search'>
-      <input type="text" onChange={(e) => {
-        callback(repo.findAllMatches(e.target.value))
-      }}/>
+      <input type="text" onChange={(e) => callback(repo.findAllMatches(e.target.value))}/>
+      <input className='submit'type='image' src='../search.svg' alt='Submit button' />
     </div>
   )
 }

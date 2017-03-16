@@ -1,7 +1,10 @@
+* {
+  font-family: 'Oswald', sans-serif;
+}
 .header {
   text-align: center;
   padding: 20px;
-  background-color: 	#f0ecc9;
+  background-image: url("../background.jpg");
   background-size: contain;
 }
 
