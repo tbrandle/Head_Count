@@ -30,7 +30,7 @@ class Comparison extends Component {
             <p className="location-average">{ compareObject[this.props.card2.location] }</p>
           </div>
           <DistrictCard districtData={this.props.card2}/>
-          <button type='submit' value='clear'>clear</button>
+          <button onClick={ ()=>this.props.clearSelection() } type='submit' value='clear'>clear</button>
         </div>
       )
     }
