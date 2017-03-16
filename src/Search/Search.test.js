@@ -11,15 +11,15 @@ describe('Search tests', () =>  {
 
   test('renders an input field', () => {
     const wrapper = shallow(<Search />)
-    expect(wrapper.find('input').length).toBe(1)
+    expect(wrapper.find('input').length).toBe(2)
   });
 
   test('trigger callback onChange', () => {
     const fakeFn = jest.fn()
     const wrapper = shallow(<Search repo={repo} callback={fakeFn}/>)
-    expect(wrapper.find('input').length).toBe(1)
+    expect(wrapper.find('input').length).toBe(2)
     wrapper.props().children.props.onChange({target:{value:'fakeValue'}})
-    expect(fakeFn.mock.calls.length).toBe(1)
+    expect(fakeFn.mock.calls.length).toBe(2)
   });
 
 });
