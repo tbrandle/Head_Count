@@ -16,7 +16,7 @@ describe('Card Wrapper tests', () =>  {
   test('stores selected cards into state', () => {
     const wrapper = mount(<CardWrapper repo={repo} displayTheseGuys={['Colorado', 'ADAMS-ARAPAHOE 28J']}/>)
     expect(wrapper.find('.district-card').length).toBe(2)
-    wrapper.node.handleCardSelect({props: {districtData: {location:'hey', data: {2001:.03}}}})
+    wrapper.node.handleCardSelect({location:'hey', data: {2001:.03}})
     expect(wrapper.state().card1).toEqual({location:'hey', data: {2001:.03}})
   });
 
