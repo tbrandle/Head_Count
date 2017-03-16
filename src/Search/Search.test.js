@@ -18,8 +18,8 @@ describe('Search tests', () =>  {
     const fakeFn = jest.fn()
     const wrapper = shallow(<Search repo={repo} callback={fakeFn}/>)
     expect(wrapper.find('input').length).toBe(2)
-    wrapper.props().children.props.onChange({target:{value:'fakeValue'}})
-    expect(fakeFn.mock.calls.length).toBe(2)
+    wrapper.props().children[0].props.onChange({target:{value:'fakeValue'}})
+    expect(fakeFn.mock.calls.length).toBe(1)
   });
 
 });
