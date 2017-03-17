@@ -1,18 +1,19 @@
 .comparison {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
+  border-bottom: 2px white solid;
 }
 
 .compare-card {
+  position: absolute;
+  top: 240px;
+  left: 35%;
   border: 2px grey solid;
   width: 300px;
-  margin: 10px 0;
-  text-align: center;
   background-color: #d54b1a;
-  border-radius: 34px;
-  min-height: 300px;
+  height: 300px;
 }
 
 .average-compare {

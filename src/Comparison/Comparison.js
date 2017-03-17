@@ -17,11 +17,10 @@ const Comparison = ({ card1, card2, repo, clearSelection }) => {
         <div className='comparison'>
           <DistrictCard districtData={card1}/>
           <div className='compare-card'>
-            <h3 className="location">{ card1.location} </h3>
-            <p className="location-average">{ compareObject[card1.location]} %</p>
-            <p className="average-compare"> -- { compareObject.compared} % -- </p>
-            <h3 className="location">{ card2.location }</h3>
-            <p className="location-average">{ compareObject[card2.location]} %</p>
+            <h3 className="location">{ card1.location}: { compareObject[card1.location]} % </h3>
+            <h3 className="location">{ card2.location }: { compareObject[card2.location]} %</h3>
+            <p className="average-compare">  Compared: { compareObject.compared} % </p>
+            <p className="location-average"></p>
             <button className='clear-btn'
                     onClick={() => clearSelection()}
                     type='submit'
